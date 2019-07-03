@@ -1,0 +1,20 @@
+<head>
+    <link href="./layout.css" type="text/css" rel="stylesheet"/>
+<h1>지름길 찾아 삼만리<span style="background-color:beige; font-family: 'Sunflower', sans-serif;"></span></h1>
+</head>
+<body>
+<div id='wrap'>
+{% for blog in blogs.all %}<span style="background-color:beige; font-family: 'Sunflower', sans-serif;"></span>
+    <br>
+    <div class="container">
+        <h1>{{blog.title}}<span style="background-color:beige; font-family: 'Sunflower', sans-serif;"></span></h1>
+        </a> 
+        <p>{{ blog.summary }}<span style="background-color:beige; font-family: 'Sunflower', sans-serif;"></span></p>
+        <a href="{% url 'detail' blog.id %}">이 곳에 아이콘 첨부<span style="background-color:beige; font-family: 'Sunflower', sans-serif;"></span></a>
+    <p>{{ blog.pub_date_pretty }}<span style="background-color:beige; font-family: 'Sunflower', sans-serif;"></span></p> 
+    <span style="background-color:beige; font-family: 'Sunflower', sans-serif;"></span>
+    </div>
+    </div>
+{% endfor %}
+
+<footer>이화여대 멋사</footer>

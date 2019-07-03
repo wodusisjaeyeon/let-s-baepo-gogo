@@ -1,0 +1,22 @@
+<h1>{{blog.title}}의 지름길을 찾아서</h1>
+
+<p>{{blog.title}}과 관련된 지름길을 공유해주세요</p>
+<p>{{blog.pub_date}}</p>
+<p>{{blog.body}}</p>
+
+<br>
+<a href="{% url 'comment_new' blog.pk %}">댓글 추가하기</a>
+{% for comment in blog.comments.all %}
+    <div class='comment'>
+        <li>
+            {{comment.text}}<small> by <strong>{{comment.author}}</strong>,{{comment.created_at}}</small>
+    
+        </li>
+    </div>
+    <p>-------------------------------------- </p>
+    {% endfor %}
+
+    <hr>
+    <a href="{% url 'home' %}">돌아가기</a>
+
+</div>
